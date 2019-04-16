@@ -47,17 +47,17 @@ class object_storer(object):
 
     def get_dk_salaries(self,username, password, do_web = False,filepath = '~/Downloads/DKSalaries.csv'):
         if do_web:
-            br = Browser('chrome')
-            br.visit('https://www.draftkings.com')
-            br.find_by_id('sign-in-link').click()
-            br.find_by_name('username').fill(username)
-            br.find_by_name('password').fill(password)
-            br.find_by_text('LOG IN').click()
-            #br.find_by_text('NAS').click()
-            time.sleep()
-            br.find_by_text('Enter')[0].click()
-            br.find_by_text('Export to CSV')[0].click()
-            br.quit()
+            # br = Browser('chrome')
+            # br.visit('https://www.draftkings.com')
+            # br.find_by_id('sign-in-link').click()
+            # br.find_by_name('username').fill(username)
+            # br.find_by_name('password').fill(password)
+            # br.find_by_text('LOG IN').click()
+            # #br.find_by_text('NAS').click()
+            # time.sleep()
+            # br.find_by_text('Enter')[0].click()
+            # br.find_by_text('Export to CSV')[0].click()
+            # br.quit()
         salary_csv = pd.read_csv(filepath)
         salary_csv['Driver_lower']=salary_csv['Name'].apply(lambda x: x.strip().replace('.','').replace(',','').lower())
 

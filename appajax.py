@@ -4,7 +4,6 @@ from flask import Flask, request, render_template, jsonify
 import pickle
 import pandas as pd
 import numpy as np
-from build_model import TextClassifier, get_data
 import requests
 import re
 from bs4 import BeautifulSoup
