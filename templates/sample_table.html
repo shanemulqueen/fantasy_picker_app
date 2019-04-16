@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Simple site for running projections">
+    <meta name="author" content="Shane Mulqueen">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>NASCAR Fantasy Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/starter-template.css" rel="stylesheet">
+
+    <link href="../static/css/bluetable.css" rel="stylesheet">
+    <link href="../static/css/dataTable.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../static/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript"
+      src="../static/jquery.js"></script>
+
+    <script src="../static/js/dataTables.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+  <style>
+  table#id904023 tr:nth-child(even) {color: green;}
+  table#id904023 tr:nth-child(odd)  {color: aqua;}
+  </style>
+  <table id=id904024  border="1" class="blueTable">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>Driver</th>
+        <th>track</th>
+        <th>date</th>
+        <th>concrete</th>
+        <th>bank</th>
+        <th>track_int</th>
+        <th>oval</th>
+        <th>quad</th>
+        <th>rectangle</th>
+        <th>road</th>
+        <th>tri</th>
+        <th>triangle</th>
+        <th>running_percent</th>
+        <th>pct_fin_lag</th>
+        <th>DRIVER RATING_12</th>
+        <th>Fastest Lap_12</th>
+        <th>Finish_12</th>
+        <th>High Pos_12</th>
+        <th>Laps Led_12</th>
+        <th>Pass Diff_12</th>
+        <th>place_diff_12</th>
+        <th>place_diff_mid_12</th>
+        <th>DRIVER RATING_06</th>
+        <th>Fastest Lap_06</th>
+        <th>Finish_06</th>
+        <th>High Pos_06</th>
+        <th>Laps Led_06</th>
+        <th>Pass Diff_06</th>
+        <th>place_diff_06</th>
+        <th>place_diff_mid_06</th>
+        <th>raced_busch</th>
+        <th>busch_fin</th>
+        <th>busch_diff</th>
+        <th>busch_rating</th>
+        <th>place_diff-avg_abs</th>
+        <th>place_diff_mid-avg_abs</th>
+        <th>Green Flag Passes-mean</th>
+        <th>Quality Passes-mean</th>
+        <th>High Pos.-first_count</th>
+        <th>High Pos.-top_three_count</th>
+        <th>DRIVER RATING-amax</th>
+        <th>first_led-amax</th>
+        <th>first_fastest-amax</th>
+        <th>first_diff-amax</th>
+        <th>Laps Led-amax</th>
+        <th>Fastest Lap-amax</th>
+        <th>avg_speed_track</th>
+        <th>pole_speed_track</th>
+        <th>margin_track</th>
+        <th>track_len_track</th>
+        <th>lead_changes_track</th>
+        <th>pct_caution_track</th>
+        <th>fin_running_track</th>
+        <th>fallout_track</th>
+        <th>St</th>
+        <th>Salary</th>
+        <th>laps</th>
+        <th>Fastest Lap</th>
+        <th>Fin</th>
+        <th>Led</th>
+        <th>dk_score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>7</th>
+        <td>Brad Keselowski</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.944444</td>
+        <td>1.0</td>
+        <td>100.608333</td>
+        <td>0.071022</td>
+        <td>9.666667</td>
+        <td>1.666667</td>
+        <td>0.140025</td>
+        <td>8.416667</td>
+        <td>2.500000</td>
+        <td>1.500000</td>
+        <td>106.116667</td>
+        <td>0.082614</td>
+        <td>7.500000</td>
+        <td>1.666667</td>
+        <td>0.079963</td>
+        <td>11.000000</td>
+        <td>7.166667</td>
+        <td>-1.333333</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>8</td>
+        <td>10600</td>
+        <td>400</td>
+        <td>27.777443</td>
+        <td>10.320300</td>
+        <td>27.316793</td>
+        <td>52.077320</td>
+      </tr>
+      <tr>
+        <th>23</th>
+        <td>Ryan Newman</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1.000000</td>
+        <td>1.0</td>
+        <td>73.041667</td>
+        <td>0.010312</td>
+        <td>15.000000</td>
+        <td>5.916667</td>
+        <td>0.000000</td>
+        <td>-8.583333</td>
+        <td>1.250000</td>
+        <td>-1.166667</td>
+        <td>78.466667</td>
+        <td>0.007523</td>
+        <td>18.000000</td>
+        <td>2.666667</td>
+        <td>0.012067</td>
+        <td>6.333333</td>
+        <td>-1.500000</td>
+        <td>-7.166667</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>24</td>
+        <td>6900</td>
+        <td>400</td>
+        <td>5.019765</td>
+        <td>15.286833</td>
+        <td>1.232860</td>
+        <td>40.244431</td>
+      </tr>
+      <tr>
+        <th>29</th>
+        <td>Denny Hamlin</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.944444</td>
+        <td>1.0</td>
+        <td>98.616667</td>
+        <td>0.049970</td>
+        <td>8.500000</td>
+        <td>1.583333</td>
+        <td>0.047638</td>
+        <td>0.833333</td>
+        <td>-3.416667</td>
+        <td>1.166667</td>
+        <td>105.150000</td>
+        <td>0.066573</td>
+        <td>5.666667</td>
+        <td>1.333333</td>
+        <td>0.104883</td>
+        <td>-2.166667</td>
+        <td>-0.666667</td>
+        <td>4.500000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>30</td>
+        <td>8900</td>
+        <td>400</td>
+        <td>23.093394</td>
+        <td>11.648190</td>
+        <td>9.680505</td>
+        <td>64.670444</td>
+      </tr>
+      <tr>
+        <th>30</th>
+        <td>Aric Almirola</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.888889</td>
+        <td>1.0</td>
+        <td>91.566667</td>
+        <td>0.024779</td>
+        <td>12.083333</td>
+        <td>2.000000</td>
+        <td>0.019840</td>
+        <td>2.083333</td>
+        <td>-2.333333</td>
+        <td>-0.583333</td>
+        <td>81.066667</td>
+        <td>0.019468</td>
+        <td>14.333333</td>
+        <td>5.166667</td>
+        <td>0.000417</td>
+        <td>1.333333</td>
+        <td>6.666667</td>
+        <td>0.333333</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>31</td>
+        <td>7700</td>
+        <td>400</td>
+        <td>7.192565</td>
+        <td>15.730403</td>
+        <td>5.475412</td>
+        <td>48.504330</td>
+      </tr>
+      <tr>
+        <th>32</th>
+        <td>Daniel Suarez</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.888889</td>
+        <td>1.0</td>
+        <td>76.558333</td>
+        <td>0.014076</td>
+        <td>18.333333</td>
+        <td>5.083333</td>
+        <td>0.005991</td>
+        <td>2.333333</td>
+        <td>-1.500000</td>
+        <td>-3.333333</td>
+        <td>70.475000</td>
+        <td>0.015610</td>
+        <td>11.500000</td>
+        <td>7.500000</td>
+        <td>0.000000</td>
+        <td>5.250000</td>
+        <td>11.250000</td>
+        <td>8.000000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>33</td>
+        <td>7500</td>
+        <td>400</td>
+        <td>4.535148</td>
+        <td>13.763446</td>
+        <td>1.199002</td>
+        <td>52.040432</td>
+      </tr>
+      <tr>
+        <th>33</th>
+        <td>Jimmie Johnson</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1.000000</td>
+        <td>1.0</td>
+        <td>79.283333</td>
+        <td>0.009378</td>
+        <td>14.333333</td>
+        <td>4.166667</td>
+        <td>0.018759</td>
+        <td>1.666667</td>
+        <td>0.750000</td>
+        <td>1.333333</td>
+        <td>87.700000</td>
+        <td>0.017478</td>
+        <td>7.833333</td>
+        <td>3.666667</td>
+        <td>0.018333</td>
+        <td>9.000000</td>
+        <td>6.833333</td>
+        <td>4.500000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>34</td>
+        <td>8300</td>
+        <td>400</td>
+        <td>7.210304</td>
+        <td>13.920108</td>
+        <td>2.364827</td>
+        <td>54.356142</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="dataTable1"  border="1" class="dataFrame display" style="width:90%">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>Driver</th>
+        <th>track</th>
+        <th>date</th>
+        <th>concrete</th>
+        <th>bank</th>
+        <th>track_int</th>
+        <th>oval</th>
+        <th>quad</th>
+        <th>rectangle</th>
+        <th>road</th>
+        <th>tri</th>
+        <th>triangle</th>
+        <th>running_percent</th>
+        <th>pct_fin_lag</th>
+        <th>DRIVER RATING_12</th>
+        <th>Fastest Lap_12</th>
+        <th>Finish_12</th>
+        <th>High Pos_12</th>
+        <th>Laps Led_12</th>
+        <th>Pass Diff_12</th>
+        <th>place_diff_12</th>
+        <th>place_diff_mid_12</th>
+        <th>DRIVER RATING_06</th>
+        <th>Fastest Lap_06</th>
+        <th>Finish_06</th>
+        <th>High Pos_06</th>
+        <th>Laps Led_06</th>
+        <th>Pass Diff_06</th>
+        <th>place_diff_06</th>
+        <th>place_diff_mid_06</th>
+        <th>raced_busch</th>
+        <th>busch_fin</th>
+        <th>busch_diff</th>
+        <th>busch_rating</th>
+        <th>place_diff-avg_abs</th>
+        <th>place_diff_mid-avg_abs</th>
+        <th>Green Flag Passes-mean</th>
+        <th>Quality Passes-mean</th>
+        <th>High Pos.-first_count</th>
+        <th>High Pos.-top_three_count</th>
+        <th>DRIVER RATING-amax</th>
+        <th>first_led-amax</th>
+        <th>first_fastest-amax</th>
+        <th>first_diff-amax</th>
+        <th>Laps Led-amax</th>
+        <th>Fastest Lap-amax</th>
+        <th>avg_speed_track</th>
+        <th>pole_speed_track</th>
+        <th>margin_track</th>
+        <th>track_len_track</th>
+        <th>lead_changes_track</th>
+        <th>pct_caution_track</th>
+        <th>fin_running_track</th>
+        <th>fallout_track</th>
+        <th>St</th>
+        <th>Salary</th>
+        <th>laps</th>
+        <th>Fastest Lap</th>
+        <th>Fin</th>
+        <th>Led</th>
+        <th>dk_score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>7</th>
+        <td>Brad Keselowski</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.944444</td>
+        <td>1.0</td>
+        <td>100.608333</td>
+        <td>0.071022</td>
+        <td>9.666667</td>
+        <td>1.666667</td>
+        <td>0.140025</td>
+        <td>8.416667</td>
+        <td>2.500000</td>
+        <td>1.500000</td>
+        <td>106.116667</td>
+        <td>0.082614</td>
+        <td>7.500000</td>
+        <td>1.666667</td>
+        <td>0.079963</td>
+        <td>11.000000</td>
+        <td>7.166667</td>
+        <td>-1.333333</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>8</td>
+        <td>10600</td>
+        <td>400</td>
+        <td>27.777443</td>
+        <td>10.320300</td>
+        <td>27.316793</td>
+        <td>52.077320</td>
+      </tr>
+      <tr>
+        <th>23</th>
+        <td>Ryan Newman</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1.000000</td>
+        <td>1.0</td>
+        <td>73.041667</td>
+        <td>0.010312</td>
+        <td>15.000000</td>
+        <td>5.916667</td>
+        <td>0.000000</td>
+        <td>-8.583333</td>
+        <td>1.250000</td>
+        <td>-1.166667</td>
+        <td>78.466667</td>
+        <td>0.007523</td>
+        <td>18.000000</td>
+        <td>2.666667</td>
+        <td>0.012067</td>
+        <td>6.333333</td>
+        <td>-1.500000</td>
+        <td>-7.166667</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>24</td>
+        <td>6900</td>
+        <td>400</td>
+        <td>5.019765</td>
+        <td>15.286833</td>
+        <td>1.232860</td>
+        <td>40.244431</td>
+      </tr>
+      <tr>
+        <th>29</th>
+        <td>Denny Hamlin</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.944444</td>
+        <td>1.0</td>
+        <td>98.616667</td>
+        <td>0.049970</td>
+        <td>8.500000</td>
+        <td>1.583333</td>
+        <td>0.047638</td>
+        <td>0.833333</td>
+        <td>-3.416667</td>
+        <td>1.166667</td>
+        <td>105.150000</td>
+        <td>0.066573</td>
+        <td>5.666667</td>
+        <td>1.333333</td>
+        <td>0.104883</td>
+        <td>-2.166667</td>
+        <td>-0.666667</td>
+        <td>4.500000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>30</td>
+        <td>8900</td>
+        <td>400</td>
+        <td>23.093394</td>
+        <td>11.648190</td>
+        <td>9.680505</td>
+        <td>64.670444</td>
+      </tr>
+      <tr>
+        <th>30</th>
+        <td>Aric Almirola</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.888889</td>
+        <td>1.0</td>
+        <td>91.566667</td>
+        <td>0.024779</td>
+        <td>12.083333</td>
+        <td>2.000000</td>
+        <td>0.019840</td>
+        <td>2.083333</td>
+        <td>-2.333333</td>
+        <td>-0.583333</td>
+        <td>81.066667</td>
+        <td>0.019468</td>
+        <td>14.333333</td>
+        <td>5.166667</td>
+        <td>0.000417</td>
+        <td>1.333333</td>
+        <td>6.666667</td>
+        <td>0.333333</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>31</td>
+        <td>7700</td>
+        <td>400</td>
+        <td>7.192565</td>
+        <td>15.730403</td>
+        <td>5.475412</td>
+        <td>48.504330</td>
+      </tr>
+      <tr>
+        <th>32</th>
+        <td>Daniel Suarez</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.888889</td>
+        <td>1.0</td>
+        <td>76.558333</td>
+        <td>0.014076</td>
+        <td>18.333333</td>
+        <td>5.083333</td>
+        <td>0.005991</td>
+        <td>2.333333</td>
+        <td>-1.500000</td>
+        <td>-3.333333</td>
+        <td>70.475000</td>
+        <td>0.015610</td>
+        <td>11.500000</td>
+        <td>7.500000</td>
+        <td>0.000000</td>
+        <td>5.250000</td>
+        <td>11.250000</td>
+        <td>8.000000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>33</td>
+        <td>7500</td>
+        <td>400</td>
+        <td>4.535148</td>
+        <td>13.763446</td>
+        <td>1.199002</td>
+        <td>52.040432</td>
+      </tr>
+      <tr>
+        <th>33</th>
+        <td>Jimmie Johnson</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1.000000</td>
+        <td>1.0</td>
+        <td>79.283333</td>
+        <td>0.009378</td>
+        <td>14.333333</td>
+        <td>4.166667</td>
+        <td>0.018759</td>
+        <td>1.666667</td>
+        <td>0.750000</td>
+        <td>1.333333</td>
+        <td>87.700000</td>
+        <td>0.017478</td>
+        <td>7.833333</td>
+        <td>3.666667</td>
+        <td>0.018333</td>
+        <td>9.000000</td>
+        <td>6.833333</td>
+        <td>4.500000</td>
+        <td>0</td>
+        <td>43</td>
+        <td>43</td>
+        <td>43</td>
+        <td>8.719599</td>
+        <td>4.9299</td>
+        <td>47.373498</td>
+        <td>15.443957</td>
+        <td>7.708333</td>
+        <td>14.25</td>
+        <td>136.0875</td>
+        <td>137.625</td>
+        <td>49.708333</td>
+        <td>8.583333</td>
+        <td>209.583333</td>
+        <td>69.791667</td>
+        <td>96.552763</td>
+        <td>116.576158</td>
+        <td>1.069474</td>
+        <td>0.75</td>
+        <td>15.736842</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>34</td>
+        <td>8300</td>
+        <td>400</td>
+        <td>7.210304</td>
+        <td>13.920108</td>
+        <td>2.364827</td>
+        <td>54.356142</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="1" id=601523 class="dataTable">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>Driver</th>
+        <th>track</th>
+        <th>date</th>
+        <th>concrete</th>
+        <th>bank</th>
+        <th>track_int</th>
+        <th>oval</th>
+        <th>quad</th>
+        <th>rectangle</th>
+        <th>road</th>
+        <th>...</th>
+        <th>pct_caution_track</th>
+        <th>fin_running_track</th>
+        <th>fallout_track</th>
+        <th>St</th>
+        <th>Salary</th>
+        <th>laps</th>
+        <th>Fastest Lap</th>
+        <th>Fin</th>
+        <th>Led</th>
+        <th>dk_score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>4</th>
+        <td>Martin Truex Jr</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>5</td>
+        <td>9800</td>
+        <td>400</td>
+        <td>21.385053</td>
+        <td>12.014502</td>
+        <td>63.039325</td>
+        <td>51.423354</td>
+      </tr>
+      <tr>
+        <th>23</th>
+        <td>Ryan Newman</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>24</td>
+        <td>6900</td>
+        <td>400</td>
+        <td>5.019765</td>
+        <td>15.286833</td>
+        <td>1.232860</td>
+        <td>40.244431</td>
+      </tr>
+      <tr>
+        <th>29</th>
+        <td>Denny Hamlin</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>30</td>
+        <td>8900</td>
+        <td>400</td>
+        <td>23.093394</td>
+        <td>11.648190</td>
+        <td>9.680505</td>
+        <td>64.670444</td>
+      </tr>
+      <tr>
+        <th>30</th>
+        <td>Aric Almirola</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>31</td>
+        <td>7700</td>
+        <td>400</td>
+        <td>7.192565</td>
+        <td>15.730403</td>
+        <td>5.475412</td>
+        <td>48.504330</td>
+      </tr>
+      <tr>
+        <th>33</th>
+        <td>Jimmie Johnson</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>34</td>
+        <td>8300</td>
+        <td>400</td>
+        <td>7.210304</td>
+        <td>13.920108</td>
+        <td>2.364827</td>
+        <td>54.356142</td>
+      </tr>
+      <tr>
+        <th>34</th>
+        <td>Erik Jones</td>
+        <td>Richmond Raceway</td>
+        <td>2019-04-14</td>
+        <td>0</td>
+        <td>14</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>...</td>
+        <td>0.146645</td>
+        <td>0.870495</td>
+        <td>1.657895</td>
+        <td>35</td>
+        <td>8000</td>
+        <td>400</td>
+        <td>6.610478</td>
+        <td>18.065225</td>
+        <td>0.746469</td>
+        <td>46.361407</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table class="blueTable">
+      <thead>
+      <tr>
+      <th>head1</th>
+      <th>head2</th>
+      <th>head3</th>
+      <th>head4</th>
+      </tr>
+      </thead>
+      <tfoot>
+      <tr>
+      <td colspan="4">
+      <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+      </td>
+      </tr>
+      </tfoot>
+      <tbody>
+      <tr>
+      <td>cell1_1</td>
+      <td>cell2_1</td>
+      <td>cell3_1</td>
+      <td>cell4_1</td>
+      </tr>
+      <tr>
+      <td>cell1_2</td>
+      <td>cell2_2</td>
+      <td>cell3_2</td>
+      <td>cell4_2</td>
+      </tr>
+      <tr>
+      <td>cell1_3</td>
+      <td>cell2_3</td>
+      <td>cell3_3</td>
+      <td>cell4_3</td>
+      </tr>
+      <tr>
+      <td>cell1_4</td>
+      <td>cell2_4</td>
+      <td>cell3_4</td>
+      <td>cell4_4</td>
+      </tr>
+      </tbody>
+</table>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#dataTable1').DataTable();
+      } );
+      </script>
+</body>
+
+</html>

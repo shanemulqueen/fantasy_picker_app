@@ -1,0 +1,26 @@
+name,len_rank,len,speed_rank,shape,surface,turn_banking,wiki
+Martinsville Speedway,1,0.526,1,oval,concrete,12,https://en.wikipedia.org/wiki/Martinsville_Speedway
+Bristol Motor Speedway,2,0.533,5,oval,concrete,28,https://en.wikipedia.org/wiki/Bristol_Motor_Speedway
+Richmond Raceway,3,0.75,8,d,asphalt,14,https://en.wikipedia.org/wiki/Richmond_Raceway
+ISM Raceway,4,1,9,tri,asphalt,10,https://en.wikipedia.org/wiki/ISM_Raceway
+Dover International Speedway,4,1,14,oval,concrete,24,https://en.wikipedia.org/wiki/Dover_International_Speedway
+North Carolina Speedway,4,1.017,0,d,asphalt,23,https://en.wikipedia.org/wiki/Rockingham_Speedway
+New Hampshire Motor Speedway,4,1.058,12,oval,asphalt,7,https://en.wikipedia.org/wiki/New_Hampshire_Motor_Speedway
+Darlington Raceway,5,1.366,15,oval,asphalt,24,https://en.wikipedia.org/wiki/Darlington_Raceway
+Kentucky Speedway,6,1.5,24,tri,asphalt,15,https://en.wikipedia.org/wiki/Kentucky_Speedway
+Chicagoland Speedway,6,1.5,25,tri,asphalt,18,https://en.wikipedia.org/wiki/Chicagoland_Speedway
+Homestead-Miami Speedway,6,1.5,16,oval,asphalt,19,https://en.wikipedia.org/wiki/Homestead%E2%80%93Miami_Speedway
+Las Vegas Motor Speedway,6,1.5,22,tri,asphalt,17,https://en.wikipedia.org/wiki/Las_Vegas_Motor_Speedway
+Kansas Speedway,6,1.5,18,tri,asphalt,18,https://en.wikipedia.org/wiki/Kansas_Speedway
+Texas Motor Speedway,6,1.5,28,quad,asphalt,22,https://en.wikipedia.org/wiki/Texas_Motor_Speedway
+Charlotte Motor Speedway,6,1.5,30,quad,asphalt,24,https://en.wikipedia.org/wiki/Charlotte_Motor_Speedway
+Atlanta Motor Speedway,6,1.54,23,quad,asphalt,24,https://en.wikipedia.org/wiki/Atlanta_Motor_Speedway
+Sonoma Raceway,7,1.990535,3,road,asphalt,1,https://en.wikipedia.org/wiki/Sonoma_Raceway
+Auto Club Speedway,7,2,26,d,asphalt,14,https://en.wikipedia.org/wiki/Auto_Club_Speedway
+Michigan International Speedway,7,2,27,d,asphalt,18,https://en.wikipedia.org/wiki/Michigan_International_Speedway
+Charlotte Motor Speedway Road Course,8,2.28,4,quad,asphalt,24,https://en.wikipedia.org/wiki/Charlotte_Motor_Speedway
+Watkins Glen International,9,2.45,6,road,asphalt,1,https://en.wikipedia.org/wiki/Watkins_Glen_International
+Indianapolis Motor Speedway,10,2.5,19,rectangle,asphalt,9,https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway
+Pocono Raceway,10,2.5,20,triangle,asphalt,11,https://en.wikipedia.org/wiki/Pocono_Raceway
+Daytona International Speedway,10,2.5,29,tri,asphalt,30,https://en.wikipedia.org/wiki/Daytona_International_Speedway
+Talladega Superspeedway,11,2.66,31,tri,asphalt,33,https://en.wikipedia.org/wiki/Talladega_Superspeedway
