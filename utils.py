@@ -58,6 +58,7 @@ class object_storer(object):
             # br.find_by_text('Enter')[0].click()
             # br.find_by_text('Export to CSV')[0].click()
             # br.quit()
+            pass
         salary_csv = pd.read_csv(filepath)
         salary_csv['Driver_lower']=salary_csv['Name'].apply(lambda x: x.strip().replace('.','').replace(',','').lower())
 
