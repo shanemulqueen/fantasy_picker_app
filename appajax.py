@@ -40,8 +40,16 @@ def table_to_dict(table,h_row=0):
 
 # Form page to submit text
 @app.route('/')
+def submission_page_default():
+    return render_template('index.html',
+            lineup_html = store.lineup_html,stats_html = store.stats_html,
+            scrape_button = store.home_buttons[0],fit_button = store.home_buttons[1],
+            predict_button = store.home_buttons[2])
+
+# Form page to submit text
+@app.route('/index.html')
 def submission_page():
-    return render_template('input_page_ajax.html',
+    return render_template('index.html',
             lineup_html = store.lineup_html,stats_html = store.stats_html,
             scrape_button = store.home_buttons[0],fit_button = store.home_buttons[1],
             predict_button = store.home_buttons[2])
