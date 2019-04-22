@@ -14,6 +14,7 @@ class object_storer(object):
         self.bs_obj = []
         self.stats_html = ''
         self.lineup_html = ''
+        self.picks_html = ''
         self.lineup_df = []
         self.forecast_df = []
         self.home_buttons = ['visible','hidden','hidden']
@@ -22,7 +23,8 @@ class object_storer(object):
         self.lineup2 = []
         self.lineup3 = []
         self.track_avgs = []
-
+        self.driver_avgs = []
+        self.set_track_dict()
         self.scrape_cols={'St':'St','Pos':'St','Str':'St','Pos.':'St',
                 'Name':'Driver','Driver':'Driver',
                 'Fin':'Fin','Finish':'Fin',
@@ -44,6 +46,42 @@ class object_storer(object):
         self.model_form = ''
         for line in f:
             self.model_form += line.strip()
+    def set_track_dict(self):
+        self.track_dict = {'Martinsville Speedway':'Martinsville Speedway',
+            'Bristol Motor Speedway':'Bristol Motor Speedway',
+            'Richmond Raceway':'Richmond Raceway',
+            'Richmond International Raceway':'Richmond Raceway',
+            'Jeff Gordon Raceway':'ISM Raceway',
+            'ISM Raceway':'ISM Raceway',
+            'Dover Downs International Speedway':'Dover International Speedway',
+            'Phoenix International Raceway':'ISM Raceway',
+            'Dover International Speedway':'Dover International Speedway',
+            'North Carolina Speedway':'North Carolina Speedway',
+            'New Hampshire Motor Speedway':'New Hampshire Motor Speedway',
+            'New Hampshire International Speedway':'New Hampshire Motor Speedway',
+            'Darlington Raceway':'Darlington Raceway',
+            'Kentucky Speedway':'Kentucky Speedway',
+            'Charlotte Motor Speedway':'Charlotte Motor Speedway',
+            'Chicagoland Speedway':'Chicagoland Speedway',
+            'Homestead-Miami Speedway':'Homestead-Miami Speedway',
+            'Las Vegas Motor Speedway':'Las Vegas Motor Speedway',
+            "Lowe's Motor Speedway":'Charlotte Motor Speedway',
+            'Kansas Speedway':'Kansas Speedway',
+            'Texas Motor Speedway':'Texas Motor Speedway',
+            'Atlanta Motor Speedway':'Atlanta Motor Speedway',
+            'Sonoma Raceway':'Sonoma Raceway',
+            'Infineon Raceway':'Sonoma Raceway',
+            'Sears Point Raceway':'Sonoma Raceway',
+            'Michigan Speedway':'Michigan International Speedway',
+            'California Speedway':'Auto Club Speedway',
+            'Auto Club Speedway':'Auto Club Speedway',
+            'Michigan International Speedway':'Michigan International Speedway',
+            'Charlotte Motor Speedway Road Course':'Charlotte Motor Speedway Road Course',
+            'Watkins Glen International':'Watkins Glen International',
+            'Indianapolis Motor Speedway':'Indianapolis Motor Speedway',
+            'Pocono Raceway':'Pocono Raceway',
+            'Daytona International Speedway':'Daytona International Speedway',
+            'Talladega Superspeedway':'Talladega Superspeedway'}
 
     def get_dk_salaries(self,username, password, do_web = False,filepath = '~/Downloads/DKSalaries.csv'):
         if do_web:
@@ -68,3 +106,11 @@ class object_storer(object):
         self.model_form = ''
         for line in f:
             self.model_form += line.strip()
+    def get_track_name(self,race_val):
+        stop_words = {'speedway','raceway','international','motor'}
+        word_set = {elem.lower() for elem in race_val.split(' ') if elem.lower() not in stop_words}
+        for key in self.track_dict.keys():
+            for word in key.split(' '):
+                if word.lower() in word_set:
+                    return  self.track_dict[key]
+        return "Track Error!"

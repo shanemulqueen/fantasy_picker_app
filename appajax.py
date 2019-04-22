@@ -42,7 +42,7 @@ def table_to_dict(table,h_row=0):
 @app.route('/')
 def submission_page_default():
     return render_template('index.html',
-            lineup_html = store.lineup_html,stats_html = store.stats_html,
+            lineup_html = store.lineup_html,stats_html = store.stats_html,picks_html = store.picks_html,
             scrape_button = store.home_buttons[0],fit_button = store.home_buttons[1],
             predict_button = store.home_buttons[2])
 
@@ -50,7 +50,18 @@ def submission_page_default():
 @app.route('/index.html')
 def submission_page():
     return render_template('index.html',
-            lineup_html = store.lineup_html,stats_html = store.stats_html,
+            lineup_html = store.lineup_html,stats_html = store.stats_html,picks_html = store.picks_html,
+            scrape_button = store.home_buttons[0],fit_button = store.home_buttons[1],
+            predict_button = store.home_buttons[2])
+# Form page to submit text
+@app.route('/logout')
+def clear_page():
+    store.stats_html = ''
+    store.lineup_html = ''
+    store.picks_html = ''
+    store.home_buttons = ['visible','hidden','hidden']
+    return render_template('index.html',
+            lineup_html = store.lineup_html,stats_html = store.stats_html,picks_html = store.picks_html,
             scrape_button = store.home_buttons[0],fit_button = store.home_buttons[1],
             predict_button = store.home_buttons[2])
 
@@ -58,7 +69,15 @@ def submission_page():
 def track_page():
     return render_template('track_avgs.html',
             #        tracks_html = store.lineup_html)
-            tracks_html = store.track_avgs.to_html(classes=['display','compact', 'nowrap'],table_id='track_stats',index = False))
+            tracks_html = store.track_avgs.to_html(classes=['display','compact', 'nowrap'],
+                table_id='track_stats',index = False,float_format=lambda x:'{:.1f}'.format(x)))
+
+@app.route('/driver_avgs')
+def driver_page():
+    return render_template('driver_avgs.html',
+            #        tracks_html = store.lineup_html)
+            tracks_html = store.track_avgs.to_html(classes=['display','compact', 'nowrap'],
+                table_id='track_stats',index = False,float_format=lambda x:'{:.1f}'.format(x)))
 
 @app.route('/scrape', methods=['POST'] )
 def scrape():
@@ -87,19 +106,21 @@ def tranform():
     store.lineup_df['Driver']=store.lineup_df['Driver'].apply(lambda x: x.strip(' #'))
     store.lineup_df['Driver_lower']=store.lineup_df['Driver'].apply(lambda x:\
             x.strip().replace('.','').replace(',','').lower())
-    salary_csv = store.get_dk_salaries(str(request.json['userid']),str(request.json['password']))
+    salary_csv = store.get_dk_salaries(" ","pass")
 
     store.lineup_df = store.lineup_df.merge(salary_csv[['Driver_lower','Salary']],on=['Driver_lower'])
     store.lineup_df.drop(columns = ['Driver_lower'],inplace=True)
     store.lineup_df['date']=str(request.json['date'])
-    store.lineup_df['track']=str(request.json['track'])
+    store.lineup_df['track']=store.get_track_name(str(request.json['track']))
     store.lineup_df['laps']=int(request.json['laps'])
     store.reload_model_form()
     store.home_buttons[1]='hidden'
     store.home_buttons[2]='visible'
     store.predicted = False
     store.stats_html=store.model_form
-    store.lineup_html = store.lineup_df.to_html(index = False, classes=['display','compact', 'nowrap'],table_id='lineup_table')
+    store.lineup_html = store.lineup_df.to_html(index = False,
+                    classes=['display','compact', 'nowrap'],table_id='lineup_table',
+                    float_format=lambda x:'{:.1f}'.format(x))
     return jsonify({'table_len':str(len(table_rows)),'lineup_html':store.lineup_html,
             'stats_html':store.stats_html})
 
@@ -156,7 +177,7 @@ def predict():
         pick_cols = [col for col in store.pick_cols if col in test_cols]
         store.lineup_html = store.forecast_df[pick_cols].to_html(\
                             index = False, classes=['display','compact', 'nowrap'],
-                            table_id='lineup_table')
+                            table_id='lineup_table',float_format=lambda x:'{:.1f}'.format(x))
         store.predicted = True
 
 
@@ -171,10 +192,23 @@ def predict():
     test_cols = set(store.lineup3.columns)
     pick_cols = [col for col in store.pick_cols if col in test_cols]
     store.stats_html=store.model_form
-    store.stats_html += store.lineup1[pick_cols].to_html(index = False, classes=['display','compact', 'nowrap'],table_id='lineup1')
-    store.stats_html += store.lineup2[pick_cols].to_html(index = False, classes=['display','compact', 'nowrap'],table_id='lineup2')
-    store.stats_html += store.lineup3[pick_cols].to_html(index = False, classes=['display','compact', 'nowrap'],table_id='lineup3')
-    return jsonify({'lineup_html':store.lineup_html,'stats_html':store.stats_html})
+    store.picks_html = ''
+    store.picks_html += "<H3>First Lineup</H3> Total Score: {:.0f} <br> Salary Used: {:.0f}"\
+                            .format(store.lineup1['dk_score_pred'].sum(),store.lineup1['Salary'].sum())
+    store.picks_html += store.lineup1[pick_cols].to_html(index = False,
+                    classes=['display','compact', 'nowrap'],table_id='lineup1',
+                    float_format=lambda x:'{:.1f}'.format(x))
+    store.picks_html += "<br><H3>Second Lineup</H3> Total Score: {:.0f} <br> Salary Used: {:.0f}"\
+                            .format(store.lineup2['dk_score_pred'].sum(),store.lineup2['Salary'].sum())
+    store.picks_html += store.lineup2[pick_cols].to_html(index = False,
+                    classes=['display','compact', 'nowrap'],table_id='lineup2',
+                    float_format=lambda x:'{:.1f}'.format(x))
+    store.picks_html += "<br><H3>Third Lineup</H3> Total Score: {:.0f} <br> Salary Used: {:.0f}"\
+                            .format(store.lineup3['dk_score_pred'].sum(),store.lineup3['Salary'].sum())
+    store.picks_html += store.lineup3[pick_cols].to_html(index = False,
+                    classes=['display','compact', 'nowrap'],table_id='lineup3',
+                    float_format=lambda x:'{:.1f}'.format(x))
+    return jsonify({'lineup_html':store.lineup_html,'picks_html':store.picks_html})
 
 
 

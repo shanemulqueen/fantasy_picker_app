@@ -38,10 +38,10 @@
 <body id="page-top">
   <!-- Sidebar -->
   <div id="wrapper">
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/logout">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-flag-checkered"></i>
       </div>
@@ -72,7 +72,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Type:</h6>
           <a class="collapse-item" href="/track_avgs">Track</a>
-          <a class="collapse-item" href="utilities-border.html">Driver</a>
+          <a class="collapse-item" href="/driver_avgs">Driver</a>
         </div>
       </div>
     </li>
@@ -119,7 +119,7 @@
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                   </a>
@@ -141,16 +141,18 @@
             <textarea id="lineup_url", rows="2", cols="80"></textarea>
             <br>
             <button style="visibility:{{scrape_button}};background:red" id="scrape">Get Lineup</button>
+
+            <span id = "stats">{{stats_html|safe}}
+          </span><br>
             <button style="visibility:{{fit_button}};background:yellow" id="fit">Looks Good</button>
             <button style="visibility:{{predict_button}};background:green" id="predict">Forecast</button>
 
             <span id ='button_holder'></span>
-            <br>
+            <br> <br>
 
-            <span id = "stats">{{stats_html|safe}}
-
-
-          </span><br>
+            <span id = "picks">{{picks_html|safe}}
+    </span>
+    <br><br>
                   <span id = "lineup">{{lineup_html|safe}}
           </span>
 
@@ -185,6 +187,9 @@
         let write_stats = function(html_input) {
           $("span#stats").html(html_input);
         }
+        let write_picks = function(html_input) {
+          $("span#picks").html(html_input);
+        }
         let send_lineup_url = function() {
           let lineup_url = get_url()
           console.log(lineup_url);
@@ -208,13 +213,13 @@
           let date_input = $("#date_input").val()
           let track_input = $("#track_input").val()
           let laps_input = $("#laps_input").val()
-          let userid = $("#userid").val()
-          let pw = $("#password").val()
+          //let userid = $("#userid").val()
+          //let pw = $("#password").val()
           $.ajax({
               url: "/transform",
               type: "POST",
               data: JSON.stringify({"date": date_input,"track":track_input,
-                      "laps":laps_input,"userid":userid,"password":pw}),
+                      "laps":laps_input}),
               contentType: "application/json",
               success: function(data) {
                   console.log(data.table_len);
@@ -224,14 +229,14 @@
                   $("button#predict").css({visibility:"visible"});
                   $('#lineup_table').DataTable({
                     "paging": false,
-                    "scrollX": true
+                    "scrollX": false
                   });
                   //write_url_scrape(data.lineup_html);
               }
           });
         }
         let predict_data = function(){
-          let model_param = $("#model_param").val()
+
           let include2 = $("#include2").val()
           let include3 = $("#include3").val()
           let exclude2 = $("#exclude2").val()
@@ -240,27 +245,30 @@
           $.ajax({
               url: "/predict",
               type: "POST",
-              data: JSON.stringify({"model_param": model_param,"include2":include2,
+              data: JSON.stringify({"include2":include2,
                         "exclude2":exclude2,"include3":include3,"exclude3":exclude3}),
               contentType: "application/json",
               success: function(data) {
                   console.log(data.lineup_html);
                   write_url_scrape(data.lineup_html);
-                  write_stats(data.stats_html);
+                  write_picks(data.picks_html);
                   $("button#fit").css({visibility:"hidden"});
                   $('#lineup1').DataTable({
                     "paging": false,
+                    "info":false,
                     "searching": false,
                     "scrollX": true
                   });
                   $('#lineup2').DataTable({
                     "paging": false,
                     "searching": false,
+                    "info": false,
                     "scrollX": true
                   });
                   $('#lineup3').DataTable({
                     "paging": false,
                     "searching": false,
+                    "info": false,
                     "scrollX": true
                   });
                   $('#lineup_table').DataTable({
@@ -281,16 +289,19 @@
           $('#lineup1').DataTable({
             "paging": false,
             "searching": false,
+            "info": false,
             "scrollX": true
           });
           $('#lineup2').DataTable({
             "paging": false,
             "searching": false,
+            "info": false,
             "scrollX": true
           });
           $('#lineup3').DataTable({
             "paging": false,
             "searching": false,
+            "info": false,
             "scrollX": true
           });
           $("button#scrape").click(function() {
