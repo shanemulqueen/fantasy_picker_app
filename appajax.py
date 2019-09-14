@@ -103,7 +103,7 @@ def tranform():
     temp_df = pd.DataFrame(table_to_dict(table_rows))
     keep_cols = {key:value for [key,value] in store.scrape_cols.items() if key in set(temp_df.columns)}
     store.lineup_df=temp_df.rename(columns=keep_cols)#[list(keep_cols.values)].copy(deep=True)
-    store.lineup_df['Driver']=store.lineup_df['Driver'].apply(lambda x: x.strip(' #'))
+    store.lineup_df['Driver']=store.lineup_df['Driver'].apply(lambda x: x.strip(' #')).apply(lambda x: x.strip(' (P)'))
     store.lineup_df['Driver_lower']=store.lineup_df['Driver'].apply(lambda x:\
             x.strip().replace('.','').replace(',','').lower())
     salary_csv = store.get_dk_salaries(" ","pass")
